@@ -1,6 +1,7 @@
-import { printLine } from './modules/print';
+// Create the side panel
+const panel = document.createElement("div");
+panel.id = "dummy-side-panel";
+panel.innerHTML = `<div id="panel-header">Hello World</div>`;
 
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
-
-printLine("Using the 'printLine' function from the Print Module");
+// Append the panel to the body
+document.body.appendChild(panel);
