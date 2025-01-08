@@ -4,6 +4,7 @@ import Greetings from '../../containers/Greetings/Greetings';
 import './Popup.css';
 
 const Popup = () => {
+  console.log('Popup');
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +18,7 @@ const Popup = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Deez Nutz!
+          Learn Ur Mom!
         </a>
       </header>
     </div>
