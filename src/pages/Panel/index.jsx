@@ -1,6 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-
+import '../../styles/tailwind.css';
 import Panel from './Panel';
 import './index.css';
 
