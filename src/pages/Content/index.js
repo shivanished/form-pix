@@ -10,22 +10,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../../components/ui/button";
+} from "../../components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
 
-// Create the main panel div
+
 const mainPanel = document.createElement('div');
 mainPanel.id = 'mainPanel';
 document.body.appendChild(mainPanel);
 mainPanel.className = 'p-4';
 
 const cardData = [
-  { title: "Upload an Image", description: "Try uploading your ID card" },
+  { title: "Upload an Image", description: "Try uploading a picture of your passport." },
   { title: "Ask a Question", description: "What does legal correspondant mean?" },
-  { title: "Fill in on Website", description: "Autofill provided information." },
+  { title: "Fill in on Website", description: "Autofill the provided information." },
   { title: "Learn about Forms", description: "What does this form I'm on do?" },
 ];
 
-// Define a React component for better structure
 const App = () => (
   <div className="fixed top-5 right-5 w-[420px] max-h-[calc(100vh-40px)] bg-white rounded-xl shadow-lg border border-gray-200 z-50 overflow-hidden flex flex-col">
     <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 text-white">
@@ -38,10 +38,12 @@ const App = () => (
     <div className="p-6 overflow-y-auto flex-grow">
       <div className="grid grid-cols-2 gap-4 mb-6">
         {cardData.map((item, index) => (
-          <div key={index} className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-shadow duration-200">
-            <h3 className="text-md font-semibold text-gray-800 mb-1">{item.title}</h3>
-            <p className="text-sm text-gray-600">{item.description}</p>
-          </div>
+          <Card key={index} className="border border-gray-100 shadow-sm">
+            <CardHeader className="p-2 space-y-1">
+              <CardTitle className="text-sm font-medium">{item.title}</CardTitle>
+              <CardDescription className="text-xs text-gray-500">{item.description}</CardDescription>
+            </CardHeader>
+          </Card>
         ))}
       </div>
 
