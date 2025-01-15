@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "../../components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "../../components/ui/avatar"
-
+import Chat from './modules/chat';
 
 const mainPanel = document.createElement('div');
 mainPanel.id = 'mainPanel';
@@ -46,6 +46,8 @@ const App = () => (
           </Card>
         ))}
       </div>
+
+      <Chat />
 
       <div className="flex gap-2 mb-2">
         <div className="flex-1 flex flex-col gap-2">
