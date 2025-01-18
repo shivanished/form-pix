@@ -18,6 +18,10 @@ mainPanel.id = 'mainPanel';
 document.body.appendChild(mainPanel);
 mainPanel.className = 'p-4';
 
+const miniPanel = document.createElement('div');
+miniPanel.id = 'miniPanel';
+miniPanel.className = 'p-2';
+
 const cardData = [
   {
     title: 'Upload an Image',
@@ -55,6 +59,16 @@ const App = () => {
     }
   };
 
+  const handleClose = () => {
+    const mainPanel = document.getElementById('mainPanel');
+    const miniPanel = document.getElementById('miniPanel');
+    if (mainPanel && mainPanel.parentNode) {
+      mainPanel.parentNode.replaceChild(miniPanel, mainPanel);
+    } else if (miniPanel && miniPanel.parentNode) {
+      miniPanel.parentNode.replaceChild(mainPanel, miniPanel);
+    }
+  };
+
   return (
     <div className="fixed top-5 right-5 w-[420px] max-h-[calc(100vh-40px)] bg-white rounded-xl shadow-lg border border-gray-200 z-50 overflow-hidden flex flex-col">
       <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6 text-white">
@@ -63,6 +77,26 @@ const App = () => {
           Your trusted companion for immigration forms. Secure, private, and
           efficient.
         </p>
+        <button
+          onClick={handleClose}
+          className="absolute top-2 right-2 text-white hover:bg-white/20 rounded-lg w-6 h-6 flex items-center justify-center transition-colors duration-200"
+          aria-label="Close"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
 
       <div className="p-4 pl-6 pr-6 overflow-y-auto flex-grow">
