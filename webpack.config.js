@@ -38,13 +38,34 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 var options = {
   mode: process.env.NODE_ENV || 'development',
   entry: {
-    newtab: [path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
-    options: [path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
-    popup: [path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
-    background: [path.join(__dirname, 'src', 'pages', 'Background', 'index.js'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
-    contentScript: [path.join(__dirname, 'src', 'pages', 'Content', 'index.js'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
-    devtools: [path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
-    panel: [path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'), path.join(__dirname, 'src', 'styles', 'tailwind.css')],
+    newtab: [
+      path.join(__dirname, 'src', 'pages', 'Newtab', 'index.jsx'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
+    options: [
+      path.join(__dirname, 'src', 'pages', 'Options', 'index.jsx'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
+    popup: [
+      path.join(__dirname, 'src', 'pages', 'Popup', 'index.jsx'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
+    background: [
+      path.join(__dirname, 'src', 'pages', 'Background', 'index.js'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
+    contentScript: [
+      path.join(__dirname, 'src', 'pages', 'Content', 'index.js'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
+    devtools: [
+      path.join(__dirname, 'src', 'pages', 'Devtools', 'index.js'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
+    panel: [
+      path.join(__dirname, 'src', 'pages', 'Panel', 'index.jsx'),
+      path.join(__dirname, 'src', 'styles', 'tailwind.css'),
+    ],
   },
   chromeExtensionBoilerplate: {
     notHotReload: ['background', 'contentScript', 'devtools'],
@@ -72,10 +93,7 @@ var options = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [
-                  require('tailwindcss'),
-                  require('autoprefixer'),
-                ],
+                plugins: [require('tailwindcss'), require('autoprefixer')],
               },
             },
           },
